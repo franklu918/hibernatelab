@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="lab.hibernate.many2many.bidirectional.xml">
+
+    <class name="XmlStudent" table="x_student">
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="name" column="name" />
+
+        <set name="teachers" table="x_teacher_student">
+            <key column="studentid" />
+            <many-to-many class="lab.hibernate.many2many.bidirectional.xml.XmlTeacher" column="teacherid" />
+        </set>
+
+    </class>
+
+</hibernate-mapping>

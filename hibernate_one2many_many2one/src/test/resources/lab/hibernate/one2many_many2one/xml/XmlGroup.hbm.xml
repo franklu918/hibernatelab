@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="lab.hibernate.one2many_many2one.xml">
+
+    <class name="XmlGroup" table="x_group">
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="name" column="name">
+        </property>
+        <set name="users">
+            <!--
+            重要：key column值 与 多方的many-to-one column值保持一致
+                 这样才能保证只有一个外键关联
+            -->
+            <key column="x_groupid"></key>
+            <one-to-many class="lab.hibernate.one2many_many2one.xml.XmlUser" />
+        </set>
+    </class>
+
+</hibernate-mapping>
