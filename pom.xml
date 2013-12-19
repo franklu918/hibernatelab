@@ -23,6 +23,7 @@
         <module>hibernate_ql_1</module>
         <module>hibernate_ql_2</module>
         <module>hibernate_cache</module>
+        <module>hibernate_concurrency_lock</module>
     </modules>
     <packaging>pom</packaging>
 
